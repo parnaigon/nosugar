@@ -23,7 +23,6 @@ gulp.task('sass', function() {
   return gulp.src('./scss/*.scss')
   .pipe(plumber({ errorHandler: onError }))
   .pipe(sass({
-    includePaths: ['./bower_components/breakpoint-sass/stylesheets'],
     outputStyle: 'expanded'
   }))
   .pipe(gulp.dest('./css'))

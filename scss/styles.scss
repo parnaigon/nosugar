@@ -2,6 +2,7 @@
 // Importing Susy from Bower compoments
 // /////////////////////////////////////////////
 @import "bower_components/susy/sass/susy";
+@import "bower_components/compass-breakpoint/stylesheets/breakpoint";
 
 
 // /////////////////////////////////////////////
@@ -11,6 +12,9 @@
 //   columns: 12,
 //   gutter: 1/4,
 // );
+
+$high-tide: 500px;
+$higher-tide: 900px;
 
 div.col-md-8 {
   @include container(960px)
@@ -26,4 +30,17 @@ div.col-md-4 {
   background-color: pink;
   color: white;
   text-align: center;
+}
+
+
+@include breakpoint($high-tide) {
+  div.col-md-8 {
+    background-color: red;
+  }
+}
+
+@include breakpoint($higher-tide) {
+  div.col-md-8 {
+    background-color: blue;
+  }
 }
