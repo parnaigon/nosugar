@@ -1,5 +1,29 @@
-body {
-  h1{
-    color: red;
-  }
+// /////////////////////////////////////////////
+// Importing Susy from Bower compoments
+// /////////////////////////////////////////////
+@import "bower_components/susy/sass/susy";
+
+
+// /////////////////////////////////////////////
+// Set up susy variable
+// /////////////////////////////////////////////
+// $susy (
+//   columns: 12,
+//   gutter: 1/4,
+// );
+
+div.col-md-8 {
+  @include container(960px)
+  @include span(8 of 12);
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+
+div.col-md-4 {
+  @include container(960px)
+  @include span(4 of 12);
+  background-color: pink;
+  color: white;
+  text-align: center;
 }
