@@ -1,9 +1,10 @@
 // /////////////////////////////////////
 // Add dependencies
 // /////////////////////////////////////
-var gulp      = require('gulp'),
-    sass      = require('gulp-sass'),
-    plumber   = require('gulp-plumber');
+var gulp        = require('gulp'),
+    sass        = require('gulp-sass'),
+    plumber     = require('gulp-plumber'),
+    browserSync = require('browser-sync');
 
 
 // /////////////////////////////////////
@@ -25,13 +26,23 @@ gulp.task('sass', function() {
     outputStyle: 'compressed'
   }))
   .pipe(gulp.dest('./css'))
+  .pipe(browserSync.stream());
 });
 
 
-
+// /////////////////////////////////////
+// Browser sync server
+// /////////////////////////////////////
+gulp.task('sync', function(){
+  browserSync.init({
+    server: './'
+  });
+  gulp.watch('./scss/*.scss', ['sass']);
+  gulp.watch('./*.html').on('change', browserSync.reload);
+});
 
 
 // /////////////////////////////////////
 // Default Task
 // /////////////////////////////////////
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'sync']);
