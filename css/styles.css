@@ -1,47 +1,103 @@
-div.col-md-8 {
-  max-width: 960px;
+@import url(../fonts/th_krub.css);
+/* Makes border-box properties */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html body {
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
+  background-size: 8.47458%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
+  font-family: 'THKrub', sans-serif;
+}
+
+html body:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.menubar {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 49px;
+  position: fixed;
+  background-color: orange;
+}
+
+.menubar .menu-btn {
+  width: 15.25424%;
+  float: left;
+  margin-right: 1.69492%;
+  min-height: 49px;
+  padding-top: 15px;
+  color: white;
+  background-color: red;
+  text-align: center;
+}
+
+.menubar .logo {
   width: 66.10169%;
   float: left;
   margin-right: 1.69492%;
-  background-color: green;
+  min-height: 49px;
+  padding-top: 15px;
   color: white;
+  background-color: blue;
   text-align: center;
 }
 
-div.col-md-8:after {
-  content: " ";
-  display: block;
-  clear: both;
+.advertisement {
+  text-align: center;
+  padding-top: 50px;
 }
 
-div.col-md-4 {
-  max-width: 960px;
+.advertisement span {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.advertisement .ad-image {
+  width: 300px;
+  height: 250px;
   margin-left: auto;
   margin-right: auto;
-  width: 32.20339%;
+  display: table;
+  background: black;
+}
+
+.article .article_meta .author {
+  display: inline-block;
+}
+
+.article .article_meta .publish_date {
+  display: inline-block;
+}
+
+.article .article_title {
+  margin: 0;
+}
+
+.article .article_featured_image img {
+  width: 100%;
   float: left;
-  margin-right: 1.69492%;
-  background-color: pink;
-  color: white;
-  text-align: center;
-}
-
-div.col-md-4:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-@media (min-width: 500px) {
-  div.col-md-8 {
-    background-color: red;
-  }
-}
-
-@media (min-width: 900px) {
-  div.col-md-8 {
-    background-color: blue;
-  }
+  margin-left: 0;
+  margin-right: 0;
 }

@@ -3,28 +3,73 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="lib/respond/dest/respond.min.js"></script>
+      <script type="text/javascript" src="lib/html5shiv/dist/html5shiv.min.js"></script>
+      <script type="text/javascript" src="lib/nwmatcher/src/nwmatcher.js"></script>
+      <script type="text/javascript" src="lib/REM-unit-polyfill/js/rem.min.js"></script>
+    <!-- <![endif] -->
+
     <title>Index</title>
+
   </head>
   <body>
-    <div class="col-md-8">
-      <p>
-        this suppose to have 8 columns
-      </p>
-    </div>
-    <div class="col-md-4">
-      <p>
-        this suppost to have 4 columns
-      </p>
-    </div>
-    <div class="col-md-4">
-      <p>
-        this suppost to have 4 columns
-      </p>
-    </div>
-    <div class="col-md-8">
-      <p>
-        this suppose to have 8 columns
-      </p>
-    </div>
+    <!-- global-container -->
+    <div class="global-container">
+
+      <!-- Menu Bar -->
+      <section class="menubar">
+        <div class="menu-btn">
+          <span>MENU</span>
+        </div>
+        <div class="logo">
+          <span>LOGO</span>
+        </div>
+      </section> <!-- End Menu Bar -->
+
+      <!-- Advertisement -->
+      <section class="advertisement">
+        <span>Advertisement</span>
+        <div class="ad-image">
+        </div>
+      </section> <!-- End Advertisement -->
+
+      <!-- Article -->
+      <article class="article">
+
+        <!-- Article Meta-->
+        <section class="article_meta">
+          <div class="author">
+            <span>By</span>
+            <span>กองบรรณาธิการ</span>
+          </div>
+          <div class="publish_date">
+            <span>19</span>
+            <span>พฤศจิกายน</span>
+            <span>2558</span>
+          </div>
+        </section> <!-- End Article Meta-->
+
+        <!-- Article Title -->
+        <h1 class="article_title"><strong>Docker คืออะไร</strong> + สอนวิธีใช้สไตล์ Web Developer</h1>
+
+        <!-- Article Featured Image -->
+        <section class="article_featured_image">
+          <img src="images/docker.jpg" alt="docker" />
+        </section> <!-- End Article Featured Image -->
+
+        <!-- Article Content -->
+        <section class="article_content">
+          <p>บทความนี้ เราจะมาลองเล่น tool อีกตัวหนึ่ง ที่กำลังถูกพูดถึงมากที่สุดในตอนนี้อย่าง Docker กันครับ แต่เนื่องจากความสามารถของ Docker นั้น ค่อนข้างจะกว้าง หากให้เล่าทั้งหมดก็คงจะใช้เวลาเยอะเลยทีเดียว บทความนี้ผมเลยจะขอเน้นไปที่การใช้งาน Docker ในแง่ของการพัฒนาเว็บไซต์เป็นหลักแล้วกันนะครับ</p>
+          <p>ปัญหายอดฮิตของ web developer ทุกคนเลยก็คือ การเสียเวลาไปกับการติดตั้งพวก application ต่างๆ ที่โปรเจคนั้นๆ จำเป็นต้องใช้ ลองคิดกันเล่นๆ ว่าถ้าเราจะทำเว็บด้วย WordPress เราจะต้องลงอะไรบ้าง ? ที่ต้องลงแน่ๆ เลยก็จะเป็น web server อย่าง Apache หรือ nginx ถูกมั้ยครับ จากนั้นเราก็จะต้องลง PHP แล้วก็ database อย่าง MySQL รวมไปถึง tool อย่าง phpMyAdmin ด้วย และที่ขาดไม่ได้เลยก็คือตัว WordPress เองครับ ส่วนใครอยากจะให้เว็บโหลดเร็วๆ หน่อย ก็อาจจะต้องลง Memcached เพิ่มเข้าไปอีก จะเห็นว่าขั้นตอนพวกนี้มันกินเวลาไปไม่น้อยเลยล่ะครับ แล้วถ้าโปรเจคนั้นต้องการใช้ application อะไรที่การติดตั้งมันมีความซับซ้อนมากขึ้นกว่านี้ หรือเป็น application ที่เราไม่เคยติดตั้งมาก่อน อย่าง Jenkins, Elasticsearch หรือ Cassandra เราก็จะยิ่งเสียเวลามากขึ้นไปอีกครับ</p>
+        </section> <!-- End Article Content -->
+
+
+      </article> <!-- End Article -->
+
+
+    </div> <!-- End global-container -->
+
   </body>
 </html>

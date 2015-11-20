@@ -1,0 +1,4 @@
+alert('hello');
+
+console.log('hello');
+console.log('hello3');

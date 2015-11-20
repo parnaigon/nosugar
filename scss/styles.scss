@@ -1,46 +1,112 @@
 // /////////////////////////////////////////////
-// Importing Susy from Bower compoments
+// Import Susy from Bower components
 // /////////////////////////////////////////////
 @import "bower_components/susy/sass/susy";
 @import "bower_components/compass-breakpoint/stylesheets/breakpoint";
 
 
-// /////////////////////////////////////////////
-// Set up susy variable
-// /////////////////////////////////////////////
-// $susy (
-//   columns: 12,
-//   gutter: 1/4,
-// );
 
-$high-tide: 500px;
-$higher-tide: 900px;
+// /////////////////////////////////////////////
+// Import fonts
+// /////////////////////////////////////////////
+@import "../fonts/th_krub.css";
 
-div.col-md-8 {
-  @include container(960px)
-  @include span(8 of 12);
-  background-color: green;
-  color: white;
-  text-align: center;
+
+
+// /////////////////////////////////////////////
+// Set up Susy variables
+// /////////////////////////////////////////////
+$susy: (
+  columns: 12,
+  debug: (image: show),
+  global-box-sizing: border-box
+);
+
+/* Makes border-box properties */
+@include border-box-sizing;
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-div.col-md-4 {
-  @include container(960px)
-  @include span(4 of 12);
-  background-color: pink;
-  color: white;
-  text-align: center;
+
+
+// /////////////////////////////////////////////
+// SCSS starts here
+// /////////////////////////////////////////////
+html {
+  body {
+    @include container();
+    font-family: 'THKrub', sans-serif;
+  }
 }
 
+.menubar {
+  @include span(12);
+  min-height: 49px;
+  position: fixed;
 
-@include breakpoint($high-tide) {
-  div.col-md-8 {
+  background-color: orange;
+
+  .menu-btn {
+    @include span(2)
+    min-height: 49px;
+    padding-top: 15px;
+
+    color: white;
     background-color: red;
+    text-align: center;
+  }
+  .logo {
+    @include span(8)
+    min-height: 49px;
+    padding-top: 15px;
+
+    color: white;
+    background-color: blue;
+    text-align: center;
   }
 }
 
-@include breakpoint($higher-tide) {
-  div.col-md-8 {
-    background-color: blue;
+.advertisement {
+  text-align: center;
+  padding-top: 50px;
+  span {
+    @include span(12)
   }
+  .ad-image {
+    width: 300px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+
+    background: black;
+  }
+}
+
+.article {
+  .article_meta {
+    .author {
+      display: inline-block;
+    }
+
+    .publish_date {
+      display: inline-block;
+    }
+  }
+
+  .article_title {
+    margin: 0;
+  }
+
+  .article_featured_image {
+    img {
+      @include span(12);
+    }
+  }
+
+
 }
