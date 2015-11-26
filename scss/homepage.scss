@@ -31,8 +31,13 @@ $susy : (
 // /////////////////////////////////////////////
 $widest-phone-width: 481px;
 $widest-tablet-width: 768px;
-
 $tablet: $widest-phone-width $widest-tablet-width;
+
+
+// /////////////////////////////////////////////
+// Set Color variables
+// /////////////////////////////////////////////
+$main-color: Aquamarine;
 
 
 // /////////////////////////////////////////////
@@ -78,7 +83,7 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   left: -250px;
   overflow: scroll;
   // background: rgba(248,0,0,0.3);
-  background-color: Aquamarine;
+  background-color: $main-color;
   li {
     list-style-type: none;
     margin-top: 5px;
@@ -96,7 +101,7 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   .menu, .search {
     margin-top: 5px;
     font-size: 1.8rem;
-   -webkit-text-fill-color: Aquamarine; /* Will override color (regardless of order) */
+   -webkit-text-fill-color: $main-color; /* Will override color (regardless of order) */
    -webkit-text-stroke-width: 1.5px;
    -webkit-text-stroke-color: black;
   }
@@ -162,3 +167,27 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   @include span(7);
   text-align: center;
 }
+
+
+a.back-to-top{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-size: 2.5rem;
+    color: $main-color;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
+    z-index: 999;
+}
+// display: none;
+// 	width: 60px;
+// 	height: 60px;
+// 	text-indent: -9999px;
+// 	position: fixed;
+// 	z-index: 999;
+// 	right: 20px;
+// 	bottom: 20px;
+// 	background: #27AE61 url("up-arrow.png") no-repeat center 43%;
+// 	-webkit-border-radius: 30px;
+// 	-moz-border-radius: 30px;
+// 	border-radius: 30px;

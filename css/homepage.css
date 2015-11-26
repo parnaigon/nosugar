@@ -302,3 +302,14 @@ head:hover ~ body .posts .post-meta:before {
   margin-right: 1.42857%;
   text-align: center;
 }
+
+a.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 2.5rem;
+  color: Aquamarine;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  z-index: 999;
+}
