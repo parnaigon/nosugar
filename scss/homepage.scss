@@ -61,7 +61,7 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 
 
 // /////////////////////////////////////////////
-// Layout Mobile (<600px) Susy
+// Sass starts here
 // /////////////////////////////////////////////
 .container {
   overflow: hidden;
@@ -163,31 +163,24 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   } //end .post-meta
 } //end .posts
 
-.load-more-post, .footer {
+.load-more-post {
   @include span(7);
   text-align: center;
 }
 
+.footer {
+  @include span(7);
+  text-align: center;
 
-a.back-to-top{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    font-size: 2.5rem;
-    color: $main-color;
-    -webkit-text-stroke-width: 1.5px;
-    -webkit-text-stroke-color: black;
-    z-index: 999;
+  a.back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      font-size: 2.5rem;
+      color: $main-color;
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: black;
+      z-index: 999;
+  }
+
 }
-// display: none;
-// 	width: 60px;
-// 	height: 60px;
-// 	text-indent: -9999px;
-// 	position: fixed;
-// 	z-index: 999;
-// 	right: 20px;
-// 	bottom: 20px;
-// 	background: #27AE61 url("up-arrow.png") no-repeat center 43%;
-// 	-webkit-border-radius: 30px;
-// 	-moz-border-radius: 30px;
-// 	border-radius: 30px;

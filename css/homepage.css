@@ -295,7 +295,7 @@ head:hover ~ body .posts .post-meta:before {
   margin-top: 0;
 }
 
-.load-more-post, .footer {
+.load-more-post {
   width: 97.14286%;
   float: left;
   margin-left: 1.42857%;
@@ -303,7 +303,15 @@ head:hover ~ body .posts .post-meta:before {
   text-align: center;
 }
 
-a.back-to-top {
+.footer {
+  width: 97.14286%;
+  float: left;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
+  text-align: center;
+}
+
+.footer a.back-to-top {
   position: fixed;
   right: 20px;
   bottom: 20px;
