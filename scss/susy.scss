@@ -1,0 +1,113 @@
+// /////////////////////////////////////////////
+// Importing Susy from Bower compoments
+// /////////////////////////////////////////////
+@import "bower_components/susy/sass/susy";
+@import "bower_components/compass-breakpoint/stylesheets/breakpoint";
+
+
+// /////////////////////////////////////////////
+// Set up boxsizing $ susy variables
+// /////////////////////////////////////////////
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$susy : (
+  columns: 12,
+  global-box-sizing: border-box,
+  debug: (
+    image: show-colums,
+    output: overlay,
+    toggle: bottom left
+    )
+);
+
+html { font-size: 62.5%; }
+body { font-size: 14px; font-size: 1.4rem; } /* =14px */
+h1   { font-size: 24px; font-size: 2.4rem; } /* =24px */
+
+
+// .wrap {
+//   @include container();
+//   height: 100vh;
+//
+//   // Changing to a 8 column grid
+//   @media (min-width: 800px) {
+//     @include show-grid(8);
+//   }
+//
+//   // Changing to a 12 column grid
+//   @media (min-width: 1200px) {
+//     @include show-grid(12);
+//   }
+//  }
+//
+//
+// .off-canvas {
+//  position: absolute;
+//  width: 260px;
+//  left: -260px;
+//  top: 0;
+//  bottom: 0;
+// }
+//
+// .main {
+//   @include container();
+//   height: 100vh;
+//   transform: translate3d(260px, 0, 0);
+// }
+
+body {
+  with: 100%;
+}
+
+.container {
+  overflow: hidden;
+
+  .transformer.is-open {
+    transform: translate3d(250px, 0, 0);
+  } //end transformer .is-open
+
+  .transformer {
+    @include container();
+    transition: transform 0.3s ease;
+
+    &.is-open {
+      transition: translate3d( span(3wide), 0 , 0);
+    }
+
+    .left {
+      position: absolute;
+      width: span(3 wide);
+      left: span(3 wide);
+      top: 0;
+      bottom: 0;
+    }
+
+    .main {
+      padding: 0 gutter();
+    }
+
+    .off-canvas {
+      min-width: 250px;
+      display: inline-block;
+      float: left;
+      background-color: red;
+      height: 100vh;
+      left: -250px;
+      position: absolute;
+    } //end off canvas
+
+    .main {
+      min-width: 800px;
+      display: inline-block;
+      background-color: green;
+      height: 100vh;
+
+    }
+
+  } //end transformer
+
+} //end container

@@ -1,0 +1,170 @@
+// /////////////////////////////////////////////
+// Importing Susy from Bower compoments
+// /////////////////////////////////////////////
+@import "bower_components/susy/sass/susy";
+@import "bower_components/compass-breakpoint/stylesheets/breakpoint";
+
+
+// /////////////////////////////////////////////
+// Set up boxsizing $ susy variables
+// /////////////////////////////////////////////
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$susy : (
+  columns: 6,
+  global-box-sizing: border-box,
+  gutter-position: split,
+  debug: (
+    image: show-colums,
+    output: overlay,
+    toggle: bottom left
+    )
+);
+
+
+// /////////////////////////////////////////////
+// Set up breakpoint variables Media Queries
+// /////////////////////////////////////////////
+$widest-phone-width: 481px;
+$widest-tablet-width: 768px;
+
+$tablet: $widest-phone-width $widest-tablet-width;
+
+
+// /////////////////////////////////////////////
+// Import THKrub font & set as default font
+// /////////////////////////////////////////////
+@import "../fonts/th_krub.css";
+body {
+  font-family: 'THKrub', sans-serif;
+  margin: 0;
+}
+
+
+// /////////////////////////////////////////////
+// Set up standard font size
+// /////////////////////////////////////////////
+html { font-size: 62.5%; }
+body { font-size: 14px; font-size: 1.4rem; } /* =16px */
+h1   { font-size: 19px; font-size: 1.9rem; font-weight: bold;} /* =17px */
+h2   { font-size: 16px; font-size: 1.6rem; } /* =15px */
+h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
+
+
+// /////////////////////////////////////////////
+// Layout Mobile (<600px) Susy
+// /////////////////////////////////////////////
+.container {
+  overflow: hidden;
+}
+
+.transformer.is-open {
+  @include container;
+  left: 250px;
+}
+
+.transformer {
+  @include container();
+  position: relative;
+}
+
+.off-canvas-menu {
+  position:absolute;
+  width: 250px;
+  left: -250px;
+  overflow: scroll;
+  background: rgba(248,0,0,0.3);
+  li {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    font-size: 1.6rem;
+  }
+}
+
+.menubar {
+  @include container(6 nest);
+  min-height: 45px;
+  background: rgba(80,80,80,0.1);
+
+  .menu, .search , .close-icon {
+    @include span(1)
+    margin-top: 5px;
+    font-size: 1.8rem;
+   -webkit-text-fill-color: Aquamarine; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1.5px;
+   -webkit-text-stroke-color: black;
+  }
+  .menu {
+    @include breakpoint($tablet){
+      @include span(1 of 12 first);
+      text-align: left;
+    };
+    text-align: left;
+  }
+  .search {
+    @include breakpoint($tablet){
+      @include span(1 of 12 last);
+    };
+  }
+
+  .logo {
+    margin-top: 5px;
+    @include span(4);
+  }
+
+  .search {
+    @include span(1 last)
+    margin-top: 5px;
+    text-align: right;
+  }
+}
+
+.advertisement {
+  text-align: center;
+  margin: 5px;
+}
+
+.posts {
+
+  .post-meta {
+    @include container(6)
+
+    .featured-image {
+      @include span(2 first)
+    }
+
+    .post-title, .excerpt, .publish-date  {
+      @include span(4 last);
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    .post-title {
+      font-weight:600;
+    }
+
+    .excerpt {
+      @include breakpoint($widest-phone-width) {
+        display: block;
+      }
+      display: none;
+      color: gray;
+    }
+
+    hr {
+      margin-top: 0;
+    }
+
+  } //end .post-meta
+} //end .posts
+
+.load-more-post, .footer {
+  @include span(6);
+  text-align: center;
+}
