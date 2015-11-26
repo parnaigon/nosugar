@@ -95,7 +95,7 @@ head:hover ~ body .transformer.is-open:before {
   content: " ";
   z-index: 998;
   background-image: linear-gradient(to right, transparent 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, transparent 90%);
-  background-size: 16.66667%;
+  background-size: 14.28571%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top;
@@ -129,7 +129,7 @@ head:hover ~ body .transformer:before {
   content: " ";
   z-index: 998;
   background-image: linear-gradient(to right, transparent 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, transparent 90%);
-  background-size: 16.66667%;
+  background-size: 14.28571%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top;
@@ -140,7 +140,7 @@ head:hover ~ body .transformer:before {
   width: 250px;
   left: -250px;
   overflow: scroll;
-  background: rgba(248, 0, 0, 0.3);
+  background-color: Aquamarine;
 }
 
 .off-canvas-menu li {
@@ -179,17 +179,13 @@ head:hover ~ body .menubar:before {
   content: " ";
   z-index: 998;
   background-image: linear-gradient(to right, transparent 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, transparent 90%);
-  background-size: 16.66667%;
+  background-size: 14.28571%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top;
 }
 
-.menubar .menu, .menubar .search, .menubar .close-icon {
-  width: 13.33333%;
-  float: left;
-  margin-left: 1.66667%;
-  margin-right: 1.66667%;
+.menubar .menu, .menubar .search {
   margin-top: 5px;
   font-size: 1.8rem;
   -webkit-text-fill-color: Aquamarine;
@@ -199,43 +195,31 @@ head:hover ~ body .menubar:before {
 }
 
 .menubar .menu {
+  width: 11.42857%;
+  float: left;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
   text-align: left;
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  .menubar .menu {
-    width: 6.66667%;
-    float: left;
-    margin-left: 0.83333%;
-    margin-right: 0.83333%;
-    text-align: left;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .menubar .search {
-    width: 6.66667%;
-    float: right;
-    margin-left: 0.83333%;
-    margin-right: 0.83333%;
-  }
+.menubar .search {
+  width: 11.42857%;
+  float: right;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
+  text-align: right;
 }
 
 .menubar .logo {
-  margin-top: 5px;
-  width: 63.33333%;
+  width: 68.57143%;
   float: left;
-  margin-left: 1.66667%;
-  margin-right: 1.66667%;
+  margin-left: 30%;
+  margin-right: -100%;
 }
 
-.menubar .search {
-  width: 13.33333%;
-  float: right;
-  margin-left: 1.66667%;
-  margin-right: 1.66667%;
-  margin-top: 5px;
-  text-align: right;
+.menubar .logo img {
+  max-height: 45px;
+  margin-top: 2px;
 }
 
 .advertisement {
@@ -270,24 +254,24 @@ head:hover ~ body .posts .post-meta:before {
   content: " ";
   z-index: 998;
   background-image: linear-gradient(to right, transparent 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, transparent 90%);
-  background-size: 16.66667%;
+  background-size: 14.28571%;
   background-origin: content-box;
   background-clip: content-box;
   background-position: left top;
 }
 
 .posts .post-meta .featured-image {
-  width: 30%;
+  width: 25.71429%;
   float: left;
-  margin-left: 1.66667%;
-  margin-right: 1.66667%;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
 }
 
 .posts .post-meta .post-title, .posts .post-meta .excerpt, .posts .post-meta .publish-date {
-  width: 63.33333%;
+  width: 68.57143%;
   float: right;
-  margin-left: 1.66667%;
-  margin-right: 1.66667%;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
   margin-top: 0;
   margin-bottom: 5px;
 }
@@ -312,9 +296,9 @@ head:hover ~ body .posts .post-meta:before {
 }
 
 .load-more-post, .footer {
-  width: 96.66667%;
+  width: 97.14286%;
   float: left;
-  margin-left: 1.66667%;
-  margin-right: 1.66667%;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
   text-align: center;
 }

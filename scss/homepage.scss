@@ -15,7 +15,7 @@
 }
 
 $susy : (
-  columns: 6,
+  columns: 7,
   global-box-sizing: border-box,
   gutter-position: split,
   debug: (
@@ -77,7 +77,8 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   width: 250px;
   left: -250px;
   overflow: scroll;
-  background: rgba(248,0,0,0.3);
+  // background: rgba(248,0,0,0.3);
+  background-color: Aquamarine;
   li {
     list-style-type: none;
     margin-top: 5px;
@@ -88,12 +89,11 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 }
 
 .menubar {
-  @include container(6 nest);
+  @include container(7 nest);
   min-height: 45px;
   background: rgba(80,80,80,0.1);
 
-  .menu, .search , .close-icon {
-    @include span(1)
+  .menu, .search {
     margin-top: 5px;
     font-size: 1.8rem;
    -webkit-text-fill-color: Aquamarine; /* Will override color (regardless of order) */
@@ -101,28 +101,22 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
    -webkit-text-stroke-color: black;
   }
   .menu {
-    @include breakpoint($tablet){
-      @include span(1 of 12 first);
-      text-align: left;
-    };
+    @include span(1 first);
     text-align: left;
   }
   .search {
-    @include breakpoint($tablet){
-      @include span(1 of 12 last);
-    };
+    @include span(1 last);
+    text-align: right;
   }
 
   .logo {
-    margin-top: 5px;
-    @include span(4);
+    @include span(isolate 5 at 3 of 7);
+    img {
+      max-height: 45px;
+      margin-top: 2px;
+    }
   }
 
-  .search {
-    @include span(1 last)
-    margin-top: 5px;
-    text-align: right;
-  }
 }
 
 .advertisement {
@@ -133,14 +127,14 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 .posts {
 
   .post-meta {
-    @include container(6)
+    @include container(7)
 
     .featured-image {
       @include span(2 first)
     }
 
     .post-title, .excerpt, .publish-date  {
-      @include span(4 last);
+      @include span(5 last);
       margin-top: 0;
       margin-bottom: 5px;
     }
@@ -165,6 +159,6 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 } //end .posts
 
 .load-more-post, .footer {
-  @include span(6);
+  @include span(7);
   text-align: center;
 }
