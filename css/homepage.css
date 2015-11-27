@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+body ul {
+  padding: 0;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -19,11 +23,10 @@ body {
   font-size: 1.4rem;
 }
 
-/* =16px */
+/* =14px */
 h1 {
   font-size: 19px;
   font-size: 1.9rem;
-  font-weight: bold;
 }
 
 /* =17px */
@@ -38,7 +41,7 @@ h3 {
   font-size: 1.4rem;
 }
 
-/* =12px */
+/* =14px */
 .container {
   overflow: hidden;
 }
@@ -140,19 +143,40 @@ head:hover ~ body .transformer:before {
   width: 250px;
   left: -250px;
   overflow: scroll;
-  background-color: Aquamarine;
+  background-color: aquamarine;
+  border-right: solid 1px;
+  border-bottom: solid 1px;
 }
 
 .off-canvas-menu li {
   list-style-type: none;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: 1.6rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.off-canvas-menu li:hover {
+  background-color: #29a67d;
+  color: white;
+  font-size: 2.4rem;
 }
 
 .off-canvas-menu a {
   text-decoration: none;
   color: black;
+}
+
+.off-canvas-menu #close-icon {
+  font-size: 1.4;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.off-canvas-menu #close-icon:hover {
+  font-size: 1.8;
 }
 
 @media (min-width: 768px) {
@@ -166,7 +190,8 @@ head:hover ~ body .transformer:before {
   margin-left: auto;
   margin-right: auto;
   min-height: 45px;
-  background: rgba(80, 80, 80, 0.1);
+  background: aquamarine;
+  border-bottom: solid 1px;
 }
 
 .menubar-small:after {
@@ -205,9 +230,9 @@ head:hover ~ body .menubar-small:before {
 .menubar-small .menu, .menubar-small .search {
   margin-top: 5px;
   font-size: 1.8rem;
-  -webkit-text-fill-color: Aquamarine;
+  -webkit-text-fill-color: white;
   /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
@@ -217,6 +242,8 @@ head:hover ~ body .menubar-small:before {
   margin-left: 0.83333%;
   margin-right: 0.83333%;
   text-align: left;
+  padding-top: 3px;
+  padding-left: 5px;
 }
 
 .menubar-small .search {
@@ -225,6 +252,8 @@ head:hover ~ body .menubar-small:before {
   margin-left: 0.83333%;
   margin-right: 0.83333%;
   text-align: right;
+  padding-top: 3px;
+  padding-right: 5px;
 }
 
 .menubar-small .logo-small {
@@ -248,7 +277,7 @@ head:hover ~ body .menubar-small:before {
   .menubar-large {
     display: block;
     min-height: 45px;
-    background: rgba(80, 80, 80, 0.1);
+    background: aquamarine;
     text-align: center;
   }
   .menubar-large ul {
@@ -256,7 +285,11 @@ head:hover ~ body .menubar-small:before {
   }
   .menubar-large ul li {
     display: inline;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
+  }
+  .menubar-large ul li:hover {
+    background-color: #29a67d;
+    color: white;
   }
   .menubar-large ul a {
     text-decoration: none;
@@ -309,6 +342,10 @@ head:hover ~ body .posts .post-meta:before {
   margin-right: 0.83333%;
 }
 
+.posts .post-meta .featured-image:hover {
+  border: solid 4px #29a67d;
+}
+
 .posts .post-meta .post-title, .posts .post-meta .excerpt, .posts .post-meta .publish-date {
   width: 69.16667%;
   float: right;
@@ -320,6 +357,12 @@ head:hover ~ body .posts .post-meta:before {
 
 .posts .post-meta .post-title {
   font-weight: 600;
+}
+
+.posts .post-meta .post-title:hover {
+  background-color: #29a67d;
+  color: white;
+  font-size: 2.2rem;
 }
 
 .posts .post-meta .excerpt {
@@ -335,6 +378,39 @@ head:hover ~ body .posts .post-meta:before {
 
 .posts .post-meta hr {
   margin-top: 0;
+}
+
+.posts .single-post .single-featured-title {
+  width: 94.16667%;
+  float: right;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.posts .single-post .single-featured-image {
+  width: 98.33333%;
+  float: left;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  float: right;
+}
+
+.posts .single-post h3 {
+  width: 94.16667%;
+  float: right;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  margin: 0;
+}
+
+.posts .single-post p {
+  width: 94.16667%;
+  float: right;
+  margin-left: 0.83333%;
+  margin-right: 0.83333%;
+  font-size: 1.8rem;
 }
 
 .load-more-post {
@@ -358,10 +434,14 @@ head:hover ~ body .posts .post-meta:before {
   right: 20px;
   bottom: 20px;
   font-size: 2.5rem;
-  color: Aquamarine;
+  color: aquamarine;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
   z-index: 999;
+}
+
+.footer a.back-to-top:hover {
+  color: #29a67d;
 }
 
 @media (min-width: 996px) {
