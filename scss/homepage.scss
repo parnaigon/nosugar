@@ -15,7 +15,7 @@
 }
 
 $susy : (
-  columns: 7,
+  columns: 12,
   global-box-sizing: border-box,
   gutter-position: split,
   debug: (
@@ -31,7 +31,7 @@ $susy : (
 // /////////////////////////////////////////////
 $widest-phone-width: 481px;
 $widest-tablet-width: 768px;
-$tablet: $widest-phone-width $widest-tablet-width;
+$widest-small-desktop: 996px;
 
 
 // /////////////////////////////////////////////
@@ -60,9 +60,9 @@ h2   { font-size: 16px; font-size: 1.6rem; } /* =15px */
 h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 
 
-// /////////////////////////////////////////////
-// Sass starts here
-// /////////////////////////////////////////////
+// ////////////////////////////////////////////////////
+// Phones, Tablets, Small Desktop layouts and styles
+// ///////////////////////////////////////////////////
 .container {
   overflow: hidden;
 }
@@ -82,8 +82,8 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   width: 250px;
   left: -250px;
   overflow: scroll;
-  // background: rgba(248,0,0,0.3);
   background-color: $main-color;
+
   li {
     list-style-type: none;
     margin-top: 5px;
@@ -91,12 +91,25 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 
     font-size: 1.6rem;
   }
+  a {
+    text-decoration: none;
+    color:black;
+  }
+
+  @include breakpoint($widest-tablet-width) {
+    display: none;
+  }
+
 }
 
-.menubar {
-  @include container(7 nest);
+.menubar-small {
+  @include container(nest);
   min-height: 45px;
   background: rgba(80,80,80,0.1);
+
+  @include breakpoint($widest-tablet-width) {
+    display: none;
+  }
 
   .menu, .search {
     margin-top: 5px;
@@ -106,21 +119,47 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
    -webkit-text-stroke-color: black;
   }
   .menu {
-    @include span(1 first);
+    @include span(2 first);
     text-align: left;
   }
   .search {
-    @include span(1 last);
+    @include span(2 last);
     text-align: right;
   }
 
-  .logo {
-    @include span(isolate 5 at 3 of 7);
+  .logo-small {
+    @include span(isolate 8 at 4.5 of 12);
     img {
       max-height: 45px;
       margin-top: 2px;
     }
   }
+
+}
+
+.menubar-large {
+  display:none;
+  padding-bottom: 5px;
+
+  @include breakpoint($widest-tablet-width) {
+    display: block;
+    min-height: 45px;
+    background: rgba( 80 , 80 , 80 , 0.1);
+    text-align: center;
+
+    ul {
+      list-style-type:none;
+
+      li {
+        display:inline;
+        font-size: 1.6rem;
+      }
+      a {
+        text-decoration: none;
+        color:black;
+      }
+    }
+  } //end of small-desktop breakpoint
 
 }
 
@@ -132,14 +171,14 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 .posts {
 
   .post-meta {
-    @include container(7)
+    @include container;
 
     .featured-image {
-      @include span(2 first)
+      @include span(3.5 first)
     }
 
     .post-title, .excerpt, .publish-date  {
-      @include span(5 last);
+      @include span(8.5 last);
       margin-top: 0;
       margin-bottom: 5px;
     }
@@ -164,12 +203,12 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
 } //end .posts
 
 .load-more-post {
-  @include span(7);
+  @include span(12);
   text-align: center;
 }
 
 .footer {
-  @include span(7);
+  @include span(12);
   text-align: center;
 
   a.back-to-top {
@@ -184,3 +223,20 @@ h3   { font-size: 14px; font-size: 1.4rem; } /* =12px */
   }
 
 }
+
+
+// ////////////////////////////////////////////////////
+// Large Desktop layouts and styles
+// ///////////////////////////////////////////////////
+@include breakpoint($widest-small-desktop) {
+  .container {
+    @include container(12 nest);
+    max-width: 997px;
+    .posts {
+      @include span(8 first);
+    }
+    .advertisement {
+      @include span(4 last);
+    }
+  }
+};
